@@ -1,5 +1,7 @@
 package com.example.tipcalculator;
 
+import android.graphics.drawable.AnimationDrawable;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +21,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ConstraintLayout constraintLayout = findViewById(R.id.constraintLayout);
+        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(4000);
+        animationDrawable.start();
+
+
+
 
         bill = (EditText) findViewById(R.id.billText);
         tip = (EditText) findViewById(R.id.tipText);
@@ -44,4 +55,5 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Please enter a number", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

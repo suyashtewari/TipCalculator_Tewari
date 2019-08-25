@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_1"
+    android:background="@drawable/gradient_list"
     tools:context=".MainActivity">
 
     <TextView
@@ -15,6 +15,7 @@
         android:layout_marginTop="16dp"
         android:text="Tip Calculator"
         android:textSize="40sp"
+        android:textColor="@android:color/secondary_text_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,9 +25,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
+        android:background="@drawable/bubble_enter"
         android:ems="10"
         android:hint="Bill"
-        android:background="@drawable/bubble_enter"
         android:inputType="numberDecimal"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/titleTextView"
@@ -37,9 +38,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Tip amount (percentage)"
         android:background="@drawable/bubble_enter"
+        android:ems="10"
+        android:hint="Tip amount (percent)"
         android:inputType="numberDecimal"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/billText"
@@ -51,9 +52,10 @@
         android:id="@+id/calcButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Calculate"
+        android:layout_marginTop="100dp"
         android:onClick="tipCalc"
+        android:text="Calculate"
+        android:background="@drawable/bubble_enter_2"
         app:layout_constraintStart_toStartOf="@+id/tipText"
         app:layout_constraintTop_toBottomOf="@+id/tipText" />
 
@@ -64,7 +66,24 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="76dp"
         android:text="Total Bill: "
+        android:textColor="@android:color/secondary_text_dark"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- https://www.geeksforgeeks.org/android-creating-a-ratingbar -->
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="236dp"
+        android:background="@drawable/gradient_2"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
 </android.support.constraint.ConstraintLayout>
